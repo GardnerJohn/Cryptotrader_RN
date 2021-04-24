@@ -13,7 +13,7 @@ const Home = (props) => {
 			<ScrollView>
 				<View>
 					<Text style={styles.heading}>{item.heading}</Text>
-					<Image style={styles.image} source={require('./images/11.jpg')} /> {/* Text under picture */}
+					<Image style={styles.image} source={require('./public/images/11.jpg')} /> {/* Text under picture */}
 					<Text style={styles.content}>{`${item.content1} ${item.content2}`}</Text>
 					<TouchableOpacity>
 						onPress={() => {
@@ -26,7 +26,7 @@ const Home = (props) => {
 	};
 
 	return (
-		<ImageBackground source={'./images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+		<ImageBackground source={'./public/images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
 			<FlatList renderItem={renderHome} data={homepagecontent} keyExtractor={(item) => item.id.toString()} />
 		</ImageBackground>
 	);

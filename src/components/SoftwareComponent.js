@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { State } from '../state/State';
 
@@ -13,7 +11,7 @@ const Software = (props) => {
 			<ScrollView>
 				<View>
 					<Text style={styles.heading}>{item.heading}</Text>
-					<Image style={styles.image} source={require('./images/6.jpg')} />
+					<Image style={styles.image} source={require('./public/images/6.jpg')} />
 					<Text style={styles.content}>{`${item.content1}`}</Text>
 					<TouchableOpacity>
 						onPress={() => {
@@ -26,11 +24,25 @@ const Software = (props) => {
 	};
 
 	return (
-		<ImageBackground source={'./images/9.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+		<ImageBackground source={'./public/images/9.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
 			<FlatList renderItem={renderHome} data={homepagecontent} keyExtractor={(item) => item.id.toString()} />
 		</ImageBackground>
 	);
 };
+
+const styles = StyleSheet.create({
+	heading: {
+		color: 'white'
+	},
+	image: {
+		width: 250
+	},
+	content: {
+		color: '#fff',
+		textAlign: 'center'
+	}
+});
+
 export default Software;
 
 // const SoftwareContent = () => {
