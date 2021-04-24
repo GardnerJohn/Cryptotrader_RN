@@ -4,17 +4,34 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { State } from '../state/State';
 
-const Software = () => {
+const Software = (props) => {
+	const softwareimport = useContext(State);
+	const softwarepagecontent = softwareimport.softwarepagecontent[0];
+
+	const renderHome = ({ item }) => {
+		return (
+			<ScrollView>
+				<View>
+					<Text style={styles.heading}>{item.heading}</Text>
+					<Image style={styles.image} source={require('./images/6.jpg')} />
+					<Text style={styles.content}>{`${item.content1}`}</Text>
+					<TouchableOpacity>
+						onPress={() => {
+							props.navigate(item.link);
+						}};
+					</TouchableOpacity>
+				</View>
+			</ScrollView>
+		);
+	};
+
 	return (
-		<View>
-			<Text>Software Details Page</Text>
-		</View>
+		<ImageBackground source={'./images/9.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+			<FlatList renderItem={renderHome} data={homepagecontent} keyExtractor={(item) => item.id.toString()} />
+		</ImageBackground>
 	);
 };
 export default Software;
-
-// const softwareimport = useContext(State);
-// const softwarepagecontent = softwareimport.softwarepagecontent[0];
 
 // const SoftwareContent = () => {
 //     return (
