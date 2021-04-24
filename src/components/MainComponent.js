@@ -1,5 +1,30 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
+import Home from './HomeComponent';
+import Software from './SoftwareComponent';
+import About from './AboutComponent';
+import Order from './OrderComponent';
+import ContactUs from './ContactUsComponent';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+const MainNavigator = createDrawerNavigator({
+	Login: {},
+	Home: {
+		screen: HomeNavigator,
+		navigationOptions: {
+			drawerIcon: ({ tintColor }) => <Icon name="home" type="font-awesome" size={24} color={tintColor} />
+		}
+	},
+	Software: {},
+	Ordering: {},
+	About: {},
+	Contact: {}
+});
+
+const AppNavigator = createAppContainer(MainNavigator);
 
 const Main = () => {
 	return (
@@ -10,16 +35,3 @@ const Main = () => {
 };
 
 export default Main;
-
-{
-	/* <Header />
-              <Switch>               
-                  <Route path='/home'><Home /></Route>
-                  <Route exact path='/software'><Software /></Route>
-                  <Route exact path='/about'><About /></Route>
-                  <Route exact path='/contactus'><ContactUs /></Route>
-                  <Route exact path='/order'><Order /></Route>
-                  <Redirect to='/home' />                   
-              </Switch>
-          <Footer /> */
-}

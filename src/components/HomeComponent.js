@@ -1,37 +1,36 @@
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
+import { ImageBackground, FlatList, View, Text } from 'react-native';
+import { Button, Image } from 'react-native-elements';
+import { FlatList } from 'react-native-gesture-handler';
+import { NavigationEvents } from 'react-navigation';
 import { State } from '../state/State';
 
-const Home = () => {
+const Home = (props) => {
+	const homeimport = useContext(State);
+	const homepagecontent = homeimport.homepagecontent;
 
-    const homeimport = useContext(State);
-    const homepagecontent = homeimport.homepagecontent;
+	const renderHome = ({ item }) => {
+		return (
+			<ScrollView>
+				<View style={{}}>
+					<Text style={{}}>{item.heading}</Text>
+					<Image style={{}} source={'./images/11.jpg'} /> {/* Text under picture */}
+					<Text style={{}}>{`${item.content1} ${item.content2}`}</Text>
+					<Button style={{}}>
+						onPress={() => {
+							NavigationEvents(item.link);
+						}};
+					</Button>
+				</View>
+			</ScrollView>
+		);
+	};
 
-    const homesections = homepagecontent.map(section => {
-        return (            
-            // <div key={section.id} className="row section-overlay pt-4 pb-4 ml-5 mr-5">
-            //     <div className={section.inverted ? 'col-12 col-lg-6 my-auto order-lg-last' : 'col-12 col-lg-6 my-auto order-lg-first'}>
-            //         <img className="imgtag" src={section.img} alt={section.name} />
-            //     </div>
-            //     <div className="col-12 col-lg-6 my-auto">
-            //         <h1 className="mb-5 mt-4 mt-lg-0">{section.heading}</h1>
-            //         <h5 className="mb-5">{section.content1}</h5>
-            //         <h5 className="mt-5">{section.content2}</h5>
-            //         <Link to={section.link}>
-            //             <button className="mt-5 mb-1 btn-lg">{section.button}</button>
-            //         </Link>
-            //     </div>
-            // </div>
-        );
-    });
-    
-    return (
-        // <div id="home" className="fade-in">
-        //     <div className="row home-image-1 image-section">
-        //         {homesections}
-        //     </div>
-        // </div>
-    )
-}
+	return (
+		<ImageBackground source={'./images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+			<FlatList renderItem={renderHome} data={homepagecontent} keyExtractor={(item) => item.id.toString()} />
+		</ImageBackground>
+	);
+};
 
-export default Home
+export default Home;
