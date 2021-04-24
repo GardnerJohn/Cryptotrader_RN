@@ -31,8 +31,8 @@ const MainNavigator = createDrawerNavigator({
 			drawerIcon: ({ tintColor }) => <Icon name="database" type="font-awesome" size={24} color={tintColor} />
 		}
 	},
-	Ordering: {
-		screen: OrderingNavigator,
+	Order: {
+		screen: OrderNavigator,
 		navigationOptions: {
 			drawerLabel: 'Order',
 			drawerIcon: ({ tintColor }) => <Icon name="shopping-bag" type="font-awesome" size={24} color={tintColor} />
@@ -45,14 +45,39 @@ const MainNavigator = createDrawerNavigator({
 			drawerIcon: ({ tintColor }) => <Icon name="id-badge" type="font-awesome" size={24} color={tintColor} />
 		}
 	},
-	Contact: {
-		screen: ContactNavigator,
+	ContactUs: {
+		screen: ContactUsNavigator,
 		navigationOptions: {
 			drawerLabel: 'Contact',
 			drawerIcon: ({ tintColor }) => <Icon name="address-card" type="font-awesome" size={24} color={tintColor} />
 		}
 	}
 });
+
+const LoginNavigator = createStackNavigator(
+	{
+		Login: { screen: Login }
+	},
+	{
+		defaultNavigationOptions: ({ navigation }) => ({
+			headerStyle: {
+				backgroundColor: '#333333'
+			},
+			headerTintColor: 'fff',
+			headerTintStyle: {
+				color: 'fff'
+			},
+			headerLeft: (
+				<Icon
+					name="sign-in"
+					type="font-awesome"
+					iconStyle={styles.stackIcon}
+					onPress={() => navigation.toggleDrawer()}
+				/>
+			)
+		})
+	}
+);
 
 const HomeNavigator = createStackNavigator(
 	{
@@ -74,6 +99,106 @@ const HomeNavigator = createStackNavigator(
 	}
 );
 
+const SoftwareNavigator = createStackNavigator(
+	{
+		Software: { screen: Software }
+	},
+	{
+		defaultNavigationOptions: ({ navigation }) => ({
+			headerStyle: {
+				backgroundColor: '#333333'
+			},
+			headerTintColor: 'fff',
+			headerTintStyle: {
+				color: 'fff'
+			},
+			headerLeft: (
+				<Icon
+					name="database"
+					type="font-awesome"
+					iconStyle={styles.stackIcon}
+					onPress={() => navigation.toggleDrawer()}
+				/>
+			)
+		})
+	}
+);
+
+const OrderNavigator = createStackNavigator(
+	{
+		Order: { screen: Order }
+	},
+	{
+		defaultNavigationOptions: ({ navigation }) => ({
+			headerStyle: {
+				backgroundColor: '#333333'
+			},
+			headerTintColor: 'fff',
+			headerTintStyle: {
+				color: 'fff'
+			},
+			headerLeft: (
+				<Icon
+					name="shopping-bag"
+					type="font-awesome"
+					iconStyle={styles.stackIcon}
+					onPress={() => navigation.toggleDrawer()}
+				/>
+			)
+		})
+	}
+);
+
+const AboutNavigator = createStackNavigator(
+	{
+		About: { screen: About }
+	},
+	{
+		defaultNavigationOptions: ({ navigation }) => ({
+			headerStyle: {
+				backgroundColor: '#333333'
+			},
+			headerTintColor: 'fff',
+			headerTintStyle: {
+				color: 'fff'
+			},
+			headerLeft: (
+				<Icon
+					name="id-badge"
+					type="font-awesome"
+					iconStyle={styles.stackIcon}
+					onPress={() => navigation.toggleDrawer()}
+				/>
+			)
+		})
+	}
+);
+
+const ContactUsNavigator = createStackNavigator(
+	{
+		ContactUs: { screen: ContactUs }
+	},
+	{
+		defaultNavigationOptions: ({ navigation }) => ({
+			headerStyle: {
+				backgroundColor: '#333333'
+			},
+			headerTintColor: 'fff',
+			headerTintStyle: {
+				color: 'fff'
+			},
+			headerLeft: (
+				<Icon
+					name="address-card"
+					type="font-awesome"
+					iconStyle={styles.stackIcon}
+					onPress={() => navigation.toggleDrawer()}
+				/>
+			)
+		})
+	}
+);
+
 const AppNavigator = createAppContainer(MainNavigator);
 
 const Main = () => {
@@ -88,7 +213,7 @@ const styles = StyleSheet.create({
 	stackIcon: {
 		color: '#d9d9d9',
 		marginLeft: 15,
-		fontSize: 20
+		fontSize: 24
 	}
 });
 

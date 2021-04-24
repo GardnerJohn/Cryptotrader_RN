@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { ImageBackground, FlatList, View, Text } from 'react-native';
-import { Button, Image } from 'react-native-elements';
+import { ImageBackground, FlatList, View, Text, TouchableOpacity } from 'react-native';
+import { Image } from 'react-native-elements';
 import { FlatList } from 'react-native-gesture-handler';
-import { NavigationEvents } from 'react-navigation';
 import { State } from '../state/State';
 
 const Home = (props) => {
@@ -12,15 +11,15 @@ const Home = (props) => {
 	const renderHome = ({ item }) => {
 		return (
 			<ScrollView>
-				<View style={{}}>
-					<Text style={{}}>{item.heading}</Text>
-					<Image style={{}} source={'./images/11.jpg'} /> {/* Text under picture */}
-					<Text style={{}}>{`${item.content1} ${item.content2}`}</Text>
-					<Button style={{}}>
+				<View>
+					<Text style={styles.heading}>{item.heading}</Text>
+					<Image style={styles.image} source={require('./images/11.jpg')} /> {/* Text under picture */}
+					<Text style={styles.content}>{`${item.content1} ${item.content2}`}</Text>
+					<TouchableOpacity>
 						onPress={() => {
-							NavigationEvents(item.link);
+							props.navigate(item.link);
 						}};
-					</Button>
+					</TouchableOpacity>
 				</View>
 			</ScrollView>
 		);
@@ -33,6 +32,17 @@ const Home = (props) => {
 	);
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	heading: {
+		color: 'white'
+	},
+	image: {
+		width: 250
+	},
+	content: {
+		color: '#fff',
+		textAlign: 'center'
+	}
+});
 
 export default Home;
