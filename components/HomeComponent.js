@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ImageBackground, FlatList, View, Text, TouchableOpacity } from 'react-native';
+import { ImageBackground, View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Image } from 'react-native-elements';
 import { FlatList } from 'react-native-gesture-handler';
 import { State } from '../state/State';
@@ -10,23 +10,21 @@ const Home = (props) => {
 
 	const renderHome = ({ item }) => {
 		return (
-			<ScrollView>
-				<View>
-					<Text style={styles.heading}>{item.heading}</Text>
-					<Image style={styles.image} source={require('./public/images/11.jpg')} /> {/* Text under picture */}
-					<Text style={styles.content}>{`${item.content1} ${item.content2}`}</Text>
-					<TouchableOpacity>
-						onPress={() => {
-							props.navigate(item.link);
-						}};
-					</TouchableOpacity>
-				</View>
-			</ScrollView>
+			<View>
+				<Text style={styles.heading}>{item.heading}</Text>
+				<Image style={styles.image} source={require('../public/images/11.jpg')} /> {/* Text under picture */}
+				<Text style={styles.content}>{`${item.content1} ${item.content2}`}</Text>
+				<TouchableOpacity>
+					onPress={() => {
+						props.navigation(item.link);
+					}};
+				</TouchableOpacity>
+			</View>
 		);
 	};
 
 	return (
-		<ImageBackground source={'./public/images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+		<ImageBackground source={'../public/images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
 			<FlatList renderItem={renderHome} data={homepagecontent} keyExtractor={(item) => item.id.toString()} />
 		</ImageBackground>
 	);

@@ -1,7 +1,6 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { Form, FormGroup, Label, Input, Col } from 'reactstrap';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
+// import { useForm } from 'react-hook-form';
+// import { Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import { State } from '../state/State';
 
 const ContactUs = () => {
