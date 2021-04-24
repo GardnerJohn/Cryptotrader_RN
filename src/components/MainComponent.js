@@ -54,6 +54,26 @@ const MainNavigator = createDrawerNavigator({
 	}
 });
 
+const HomeNavigator = createStackNavigator(
+	{
+		Home: { screen: Home }
+	},
+	{
+		defaultNavigationOptions: ({ navigation }) => ({
+			headerStyle: {
+				backgroundColor: '#333333'
+			},
+			headerTintColor: 'fff',
+			headerTintStyle: {
+				color: 'fff'
+			},
+			headerLeft: (
+				<Icon name="home" type="font-awesome" iconStyle={styles.stackIcon} onPress={() => navigation.toggleDrawer()} />
+			)
+		})
+	}
+);
+
 const AppNavigator = createAppContainer(MainNavigator);
 
 const Main = () => {
@@ -63,5 +83,13 @@ const Main = () => {
 		</View>
 	);
 };
+
+const styles = StyleSheet.create({
+	stackIcon: {
+		color: '#d9d9d9',
+		marginLeft: 15,
+		fontSize: 20
+	}
+});
 
 export default Main;
