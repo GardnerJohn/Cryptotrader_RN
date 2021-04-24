@@ -33,4 +33,6 @@ const Home = (props) => {
 	);
 };
 
+const styles = StyleSheet.create({});
+
 export default Home;
