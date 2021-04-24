@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ImageBackground, View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Image } from 'react-native-elements';
 import { FlatList } from 'react-native-gesture-handler';
 import { State } from '../state/State';
@@ -12,7 +12,7 @@ const Home = (props) => {
 		return (
 			<View>
 				<Text style={styles.heading}>{item.heading}</Text>
-				<Image style={styles.image} source={require('../public/images/11.jpg')} /> {/* Text under picture */}
+				<Image style={styles.image} source={require('../public/images/11.jpg')} />
 				<Text style={styles.content}>{`${item.content1} ${item.content2}`}</Text>
 				<TouchableOpacity>
 					onPress={() => {

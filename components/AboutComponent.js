@@ -1,16 +1,33 @@
 import React, { useState, useContext } from 'react';
+import { ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 import { State } from '../state/State';
 
 const About = () => {
+	const aboutimport = useContext(State);
+	const aboutpagecontent = aboutimport.aboutpagecontent[0];
+
+	const renderAbout = ({ item }) => {
+		return (
+			<View>
+				<Text style={styles.heading}>{item.heading}</Text>
+				<Image style={styles.image} source={require('../public/images/8.jpg')} />
+				<Text style={styles.content}>{`${item.content1} ${item.content2} ${item.content3}`}</Text>
+				<TouchableOpacity>
+					onPress={() => {
+						props.navigation(item.link);
+					}};
+				</TouchableOpacity>
+			</View>
+		);
+	};
+
 	return (
-		<View>
-			<Text>About Page</Text>
-		</View>
+		<ImageBackground source={'../public/images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+			<FlatList renderItem={renderAbout} data={aboutpagecontent} keyExtractor={(item) => item.id.toString()} />
+		</ImageBackground>
 	);
 };
-
-// const aboutimport = useContext(State);
-// const aboutpagecontent = aboutimport.aboutpagecontent[0];
 
 // const AboutContent = () => {
 //     return (

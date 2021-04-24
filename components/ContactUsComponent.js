@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 // import { useForm } from 'react-hook-form';
 // import { Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import { State } from '../state/State';

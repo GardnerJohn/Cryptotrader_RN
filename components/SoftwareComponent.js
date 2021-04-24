@@ -7,7 +7,7 @@ const Software = (props) => {
 	const softwareimport = useContext(State);
 	const softwarepagecontent = softwareimport.softwarepagecontent[0];
 
-	const renderHome = ({ item }) => {
+	const renderSoftware = ({ item }) => {
 		return (
 			<ScrollView>
 				<View>
@@ -26,7 +26,7 @@ const Software = (props) => {
 
 	return (
 		<ImageBackground source={'../public/images/9.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
-			<FlatList renderItem={renderHome} data={softwarepagecontent} keyExtractor={(item) => item.id.toString()} />
+			<FlatList renderItem={renderSoftware} data={softwarepagecontent} keyExtractor={(item) => item.id.toString()} />
 		</ImageBackground>
 	);
 };

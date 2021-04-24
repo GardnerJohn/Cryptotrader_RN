@@ -1,5 +1,7 @@
+import React from 'react';
 import { useState, useContext } from 'react';
 import { State } from '../state/State';
+import { ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const Order = () => {
 	return (
