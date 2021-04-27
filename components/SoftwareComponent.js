@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
 	heading: {
 		color: 'white',
 		fontSize: 20,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		textAlign: 'center'
 	},
 	content: {
 		color: 'white',
@@ -65,7 +66,6 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontSize: 15,
 		backgroundColor: 'black',
-		width: 250,
 		padding: 20
 	}
 });
