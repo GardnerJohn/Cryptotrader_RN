@@ -1,50 +1,72 @@
 import React, { useContext } from 'react';
 import { State } from '../state/State';
-import { StyleSheet, ImageBackground } from 'react-native';
+import { ImageBackground, View, TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
 const Software = (props) => {
 	const softwareimport = useContext(State);
-	const softwarepagecontent = softwareimport.softwarepagecontent[0];
+	const softwarepagecontent = softwareimport.softwarepagecontent;
 
 	const renderSoftware = ({ item }) => {
 		return (
-			<ScrollView>
+			<View style={styles.section}>
+				<Text style={styles.heading}>{item.heading}</Text>
 				<View>
-					<Text style={styles.heading}>{item.heading}</Text>
-					<Image style={styles.image} source={require('../public/images/6.jpg')} />
-					<Text style={styles.content}>{`${item.content1}`}</Text>
-					<TouchableOpacity>
-						onPress={() => {
-							props.navigate(item.link);
-						}};
-					</TouchableOpacity>
+					<Image style={styles.mainImage} source={require('../public/images/6.jpg')} />
 				</View>
-			</ScrollView>
+				<Text style={styles.content}>{`${item.content1}\n\n${item.content2}\n\n${item.content3}\n`}</Text>
+				<TouchableOpacity
+					onPress={() => {
+						props.navigation(item.link);
+					}}
+				>
+					<Text style={styles.button}>{item.button}</Text>
+				</TouchableOpacity>
+			</View>
 		);
 	};
 
 	return (
-		<ImageBackground source={'../public/images/9.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+		<ImageBackground source={require('../public/images/9.jpg')} style={styles.imageBackground}>
 			<FlatList renderItem={renderSoftware} data={softwarepagecontent} keyExtractor={(item) => item.id.toString()} />
 		</ImageBackground>
 	);
 };
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		flexDirection: 'column'
-	},
 	heading: {
-		color: 'white'
-	},
-	image: {
-		width: 250
+		color: 'white',
+		fontSize: 20,
+		fontWeight: 'bold'
 	},
 	content: {
 		color: 'white',
-		textAlign: 'center'
+		textAlign: 'center',
+		fontSize: 20
+	},
+	imageBackground: {
+		resizeMode: 'cover',
+		justifyContent: 'center',
+		flex: 1
+	},
+	mainImage: {
+		width: 353,
+		height: 240
+	},
+	section: {
+		backgroundColor: 'hsl(0, 70%, 28%)',
+		marginBottom: 20,
+		margin: 20,
+		alignItems: 'center',
+		paddingBottom: 15,
+		opacity: 0.7
+	},
+	button: {
+		color: 'white',
+		fontSize: 15,
+		backgroundColor: 'black',
+		width: 250,
+		padding: 20
 	}
 });
 

@@ -9,7 +9,6 @@ const Home = (props) => {
 	const homepagecontent = homeimport.homepagecontent;
 
 	const renderHome = ({ item }) => {
-		console.log(item);
 		return (
 			<View>
 				<Text style={styles.heading}>{item.heading}</Text>
@@ -26,17 +25,19 @@ const Home = (props) => {
 					}
 				/>
 				<Text style={styles.content}>{`${item.content1} ${item.content2}`}</Text>
-				<TouchableOpacity>
+				<TouchableOpacity
 					onPress={() => {
 						props.navigation(item.link);
-					}};
+					}}
+				>
+					<Text style={styles.button}>{item.button}</Text>
 				</TouchableOpacity>
 			</View>
 		);
 	};
 
 	return (
-		<ImageBackground source={'../public/images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+		<ImageBackground source={require('../public/images/5.jpg')} style={styles.imageBackground}>
 			<FlatList renderItem={renderHome} data={homepagecontent} keyExtractor={(item) => item.id.toString()} />
 		</ImageBackground>
 	);
@@ -52,6 +53,18 @@ const styles = StyleSheet.create({
 	content: {
 		color: '#fff',
 		textAlign: 'center'
+	},
+	imageBackground: {
+		resizeMode: 'cover',
+		justifyContent: 'center',
+		flex: 1
+	},
+	button: {
+		color: 'white',
+		fontSize: 15,
+		backgroundColor: 'black',
+		width: 250,
+		padding: 20
 	}
 });
 
