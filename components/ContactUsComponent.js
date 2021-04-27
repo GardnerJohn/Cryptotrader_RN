@@ -12,6 +12,19 @@ const ContactUs = () => {
 	);
 };
 
+const styles = StyleSheet.create({
+	heading: {
+		color: 'white'
+	},
+	image: {
+		width: 250
+	},
+	content: {
+		color: '#fff',
+		textAlign: 'center'
+	}
+});
+
 export default ContactUs;
 
 // const contactusimport = useContext(State);

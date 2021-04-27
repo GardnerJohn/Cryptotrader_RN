@@ -11,6 +11,19 @@ const Order = () => {
 	);
 };
 
+const styles = StyleSheet.create({
+	heading: {
+		color: 'white'
+	},
+	image: {
+		width: 250
+	},
+	content: {
+		color: '#fff',
+		textAlign: 'center'
+	}
+});
+
 export default Order;
 
 // const Order = () => {

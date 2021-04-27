@@ -29,6 +29,19 @@ const About = () => {
 	);
 };
 
+const styles = StyleSheet.create({
+	heading: {
+		color: 'white'
+	},
+	image: {
+		width: 250
+	},
+	content: {
+		color: '#fff',
+		textAlign: 'center'
+	}
+});
+
 // const AboutContent = () => {
 //     return (
 //         <div className="row section-overlay2 pt-4 pb-4 ml-5 mr-5">
