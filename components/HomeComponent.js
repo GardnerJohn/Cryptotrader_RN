@@ -10,10 +10,10 @@ const Home = (props) => {
 
 	const renderHome = ({ item }) => {
 		return (
-			<View>
+			<View style={styles.section}>
 				<Text style={styles.heading}>{item.heading}</Text>
 				<Image
-					style={styles.image}
+					style={styles.mainImage}
 					source={
 						item.id === 1 ? (
 							require('../public/images/11.jpg')
@@ -45,10 +45,9 @@ const Home = (props) => {
 
 const styles = StyleSheet.create({
 	heading: {
-		color: 'white'
-	},
-	image: {
-		width: 250
+		color: 'white',
+		fontSize: 20,
+		fontWeight: 'bold'
 	},
 	content: {
 		color: '#fff',
@@ -58,6 +57,18 @@ const styles = StyleSheet.create({
 		resizeMode: 'cover',
 		justifyContent: 'center',
 		flex: 1
+	},
+	mainImage: {
+		width: 353,
+		height: 240
+	},
+	section: {
+		backgroundColor: 'hsl(0, 70%, 28%)',
+		marginBottom: 20,
+		margin: 20,
+		alignItems: 'center',
+		paddingBottom: 15,
+		opacity: 0.7
 	},
 	button: {
 		color: 'white',

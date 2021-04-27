@@ -8,17 +8,25 @@ const ContactUs = () => {
 	const contactusimport = useContext(State);
 	const contactuspagecontent = contactusimport.contactuspagecontent[0];
 
+	const ContactUsHeading = () => {
+		return (
+			<View>
+				<Text style={styles.heading}>{item.heading}</Text>
+				<Image style={styles.image} source={require('../public/images/8.jpg')} />
+				<Text style={styles.content}>{`${item.content1} ${item.content2} ${item.content3}`}</Text>
+				<TouchableOpacity>
+					onPress={() => {
+						props.navigation(item.link);
+					}};
+				</TouchableOpacity>
+			</View>
+		);
+	};
+
 	return (
-		<View>
-			<Text style={styles.heading}>{item.heading}</Text>
-			<Image style={styles.image} source={require('../public/images/8.jpg')} />
-			<Text style={styles.content}>{`${item.content1} ${item.content2} ${item.content3}`}</Text>
-			<TouchableOpacity>
-				onPress={() => {
-					props.navigation(item.link);
-				}};
-			</TouchableOpacity>
-		</View>
+		<ImageBackground source={'../public/images/5.jpg'} style={{ resizeMode: 'contain', justifyContent: 'center' }}>
+			<FlatList renderItem={renderAbout} data={aboutpagecontent} keyExtractor={(item) => item.id.toString()} />
+		</ImageBackground>
 	);
 };
 
