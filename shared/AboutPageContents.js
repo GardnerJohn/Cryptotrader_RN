@@ -11,8 +11,8 @@ export const ABOUTPAGECONTENTS = [
 		button1: 'Home',
 		button2: 'Pricing and Ordering Information',
 		button3: 'Contact Us',
-		link1: '/Home',
-		link2: '/software',
-		link3: '/contactus'
+		link1: 'Home',
+		link2: 'Software',
+		link3: 'Contactus'
 	}
 ];

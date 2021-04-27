@@ -4,7 +4,7 @@ import { ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react
 // import { Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import { State } from '../state/State';
 
-const ContactUs = () => {
+const ContactUs = (props) => {
 	const contactusimport = useContext(State);
 	const contactuspagecontent = contactusimport.contactuspagecontent[0];
 
