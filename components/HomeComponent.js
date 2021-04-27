@@ -9,10 +9,22 @@ const Home = (props) => {
 	const homepagecontent = homeimport.homepagecontent;
 
 	const renderHome = ({ item }) => {
+		console.log(item);
 		return (
 			<View>
 				<Text style={styles.heading}>{item.heading}</Text>
-				<Image style={styles.image} source={require('../public/images/11.jpg')} />
+				<Image
+					style={styles.image}
+					source={
+						item.id === 1 ? (
+							require('../public/images/11.jpg')
+						) : item.id === 2 ? (
+							require('../public/images/8.jpg')
+						) : (
+							require('../public/images/13.jpg')
+						)
+					}
+				/>
 				<Text style={styles.content}>{`${item.content1} ${item.content2}`}</Text>
 				<TouchableOpacity>
 					onPress={() => {
