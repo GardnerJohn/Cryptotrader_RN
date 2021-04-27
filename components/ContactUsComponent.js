@@ -5,9 +5,19 @@ import { ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react
 import { State } from '../state/State';
 
 const ContactUs = () => {
+	const contactusimport = useContext(State);
+	const contactuspagecontent = contactusimport.contactuspagecontent[0];
+
 	return (
 		<View>
-			<Text>Contact Us Page</Text>
+			<Text style={styles.heading}>{item.heading}</Text>
+			<Image style={styles.image} source={require('../public/images/8.jpg')} />
+			<Text style={styles.content}>{`${item.content1} ${item.content2} ${item.content3}`}</Text>
+			<TouchableOpacity>
+				onPress={() => {
+					props.navigation(item.link);
+				}};
+			</TouchableOpacity>
 		</View>
 	);
 };
