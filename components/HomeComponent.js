@@ -12,19 +12,21 @@ const Home = (props) => {
 		return (
 			<View style={styles.section}>
 				<Text style={styles.heading}>{item.heading}</Text>
-				<Image
-					style={styles.mainImage}
-					source={
-						item.id === 1 ? (
-							require('../public/images/11.jpg')
-						) : item.id === 2 ? (
-							require('../public/images/8.jpg')
-						) : (
-							require('../public/images/13.jpg')
-						)
-					}
-				/>
-				<Text style={styles.content}>{`${item.content1}\n ${item.content2}\n`}</Text>
+				<View>
+					<Image
+						style={styles.mainImage}
+						source={
+							item.id === 1 ? (
+								require('../public/images/11.jpg')
+							) : item.id === 2 ? (
+								require('../public/images/8.jpg')
+							) : (
+								require('../public/images/13.jpg')
+							)
+						}
+					/>
+				</View>
+				<Text style={styles.content}>{`${item.content1}\n\n${item.content2}\n\n`}</Text>
 				<TouchableOpacity
 					onPress={() => {
 						props.navigation(item.link);
@@ -76,7 +78,8 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		backgroundColor: 'black',
 		padding: 20,
-		alignItems: 'center'
+		alignItems: 'center',
+		borderRadius: 10
 	}
 });
 
