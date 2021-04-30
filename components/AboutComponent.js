@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Touchable } from 'react-native';
 import { ImageBackground, Image, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { State } from '../state/State';
