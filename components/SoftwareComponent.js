@@ -11,9 +11,7 @@ const Software = (props) => {
 		return (
 			<View style={styles.section}>
 				<Text style={styles.heading}>{item.heading}</Text>
-				<View>
-					<Image style={styles.mainImage} source={require('../public/images/6.jpg')} />
-				</View>
+				<Image style={styles.mainImage} source={require('../public/images/6.jpg')} />
 				<Text style={styles.content}>{`${item.content1}\n\n${item.content2}\n\n${item.content3}\n`}</Text>
 				<TouchableOpacity
 					onPress={() => {
@@ -60,7 +58,7 @@ const styles = StyleSheet.create({
 		margin: 20,
 		alignItems: 'center',
 		paddingBottom: 15,
-		opacity: 0.7
+		opacity: 0.8
 	},
 	button: {
 		color: 'white',
