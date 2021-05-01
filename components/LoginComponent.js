@@ -75,7 +75,7 @@ const Login = () => {
 
 	return (
 		<View>
-			<ImageBackground source={require('../public/images/10.jpg')} style={styles.imageBackground}>
+			<ImageBackground source={require('../public/images/1.jpg')} style={styles.imageBackground}>
 				<ContactForm />
 			</ImageBackground>
 		</View>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
 	},
 	section: {
 		backgroundColor: 'hsl(0, 70%, 28%)',
-		marginTop: 20,
+		marginTop: 100,
 		marginBottom: 10,
 		margin: 20,
 		alignItems: 'center',
