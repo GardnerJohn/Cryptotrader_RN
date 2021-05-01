@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 		margin: 20,
 		alignItems: 'center',
 		paddingBottom: 15,
-		opacity: 0.7
+		opacity: 0.8
 	},
 	button: {
 		color: 'white',

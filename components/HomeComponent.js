@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
 	},
 	section: {
 		backgroundColor: 'hsl(0, 70%, 28%)',
-		marginBottom: 20,
+		marginTop: 20,
+		marginBottom: 10,
 		margin: 20,
 		alignItems: 'center',
 		paddingBottom: 15,
