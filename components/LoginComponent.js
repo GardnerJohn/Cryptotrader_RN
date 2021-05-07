@@ -98,10 +98,10 @@ const styles = StyleSheet.create({
 	section: {
 		backgroundColor: 'hsl(0, 70%, 28%)',
 		marginTop: 100,
-		marginBottom: 10,
-		margin: 20,
+		marginBottom: 30,
+		margin: 15,
 		alignItems: 'center',
-		paddingBottom: 15,
+		paddingBottom: 30,
 		opacity: 0.7
 	},
 	input: {
@@ -117,14 +117,15 @@ const styles = StyleSheet.create({
 		backgroundColor: 'hsla(0, 70%, 20%, .7)',
 		alignItems: 'center',
 		color: 'white',
-		padding: 20,
+		padding: 24,
 		width: 300,
 		marginTop: 20
 	},
 	imageBackground: {
 		resizeMode: 'cover',
 		justifyContent: 'center',
-		flex: 1
+		flex: 1,
+		paddingBottom: 500
 	}
 });
 export default Login;
