@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ImageBackground, View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Input } from 'react-native-elements/dist/input/Input';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ContactUs = (props) => {
 	const ContactForm = () => {
@@ -44,6 +45,7 @@ const ContactUs = (props) => {
 					style={styles.input}
 					inputStyle={{ color: '#fff' }}
 					placeholder="First Name"
+					leftIcon={<Icon style={styles.icon} name="user" size={30} color="#fff" />}
 					value={form.firstName}
 					onChangeText={(text) => setForm({ ...form, firstName: text })}
 				/>
@@ -51,6 +53,7 @@ const ContactUs = (props) => {
 					style={styles.input}
 					inputStyle={{ color: '#fff' }}
 					placeholder="Last Name"
+					leftIcon={<Icon style={styles.icon} name="user" size={30} color="fff" />}
 					value={form.lastName}
 					onChangeText={(text) => setForm({ ...form, lastName: text })}
 				/>
@@ -58,6 +61,7 @@ const ContactUs = (props) => {
 					style={styles.input}
 					inputStyle={{ color: '#fff' }}
 					placeholder="Comments/Questions"
+					leftIcon={<Icon style={styles.icon} name="comment" size={22} color="fff" />}
 					value={form.comments}
 					onChangeText={(text) => setForm({ ...form, comments: text })}
 				/>
@@ -105,6 +109,9 @@ const styles = StyleSheet.create({
 		color: '#fff',
 		padding: 30,
 		width: 300
+	},
+	icon: {
+		marginRight: 20
 	},
 	imageBackground: {
 		resizeMode: 'cover',

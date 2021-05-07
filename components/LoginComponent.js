@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Input, CheckBox, Icon } from 'react-native-elements';
+import { Input, CheckBox } from 'react-native-elements';
 import { ImageBackground, View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Login = () => {
 	const ContactForm = () => {
@@ -44,7 +45,7 @@ const Login = () => {
 					style={styles.input}
 					inputStyle={{ color: '#fff' }}
 					placeholder="Username"
-					leftIcon={<Icon style={{ marginRight: 20 }} type="font-awesome" name="user-o" size={24} color="#fff" />}
+					leftIcon={<Icon style={styles.icon} name="user" size={30} color="#fff" />}
 					onChangeText={(text) => setForm({ ...form, userName: text })}
 					value={form.userName}
 				/>
@@ -53,7 +54,8 @@ const Login = () => {
 					inputStyle={{ color: '#fff' }}
 					placeholder="Password"
 					secureTextEntry={true}
-					leftIcon={<Icon style={{ marginRight: 20 }} name="key" size={24} type="font-awesome" color="#fff" />}
+					leftIcon={<Icon style={styles.icon} name="key" size={22} color="#fff" />}
+					secureTextEntry={true}
 					onChangeText={(text) => setForm({ ...form, password: text })}
 					value={form.password}
 				/>
@@ -107,6 +109,9 @@ const styles = StyleSheet.create({
 		color: '#fff',
 		justifyContent: 'center',
 		alignItems: 'center'
+	},
+	icon: {
+		marginRight: 20
 	},
 	button: {
 		backgroundColor: 'hsla(0, 70%, 20%, .7)',
